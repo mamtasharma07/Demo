@@ -1,0 +1,49 @@
+{
+  "name": "DemoIntelligentOCR",
+  "description": "Blank Process",
+  "main": "InteligentOCR.xaml",
+  "dependencies": {
+    "Bluedart_Services": "1.0.3",
+    "Druid.UiPath.Activities": "1.0.5",
+    "Orchestrator_ServiceAPI": "1.0.2",
+    "UiPath": "19.4.7054.14370",
+    "UiPath.Cognitive.Activities": "2.2.1",
+    "UiPath.ComputerVision.Activities": "[1.0.0]",
+    "UiPath.CyberArk.Activities": "0.1.6852.24230",
+    "UiPath.DocumentProcessing.Contracts": "1.1.0",
+    "UiPath.Ephesoft.Activities": "0.1.6848.33688",
+    "UiPath.Excel.Activities": "[2.6.1]",
+    "UiPath.GoogleVision.Activities": "1.0.0",
+    "UiPath.GSuite.Activities": "1.1.1",
+    "UiPath.IntelligentOCR.Activities": "[2.1.0]",
+    "UiPath.Mail.Activities": "[1.5.0]",
+    "UiPath.MicrosoftOffice365.Activities": "0.1.0",
+    "UiPath.MicrosoftVision.Activities": "1.0.0",
+    "UiPath.OCR.Activities": "1.0.5998.20115",
+    "UiPath.PDF.Activities": "2.0.0",
+    "UiPath.SAP.BAPI.Activities": "2.0.0",
+    "UiPath.System.Activities": "[19.5.0]",
+    "UiPath.Terminal.Activities": "1.3.1",
+    "UiPath.UIAutomation.Activities": "[19.5.0]",
+    "UiPath.Vision": "1.6.0",
+    "UiPath.WebAPI.Activities": "1.4.1",
+    "UiPath.Word.Activities": "1.3.1"
+  },
+  "schemaVersion": "3.2",
+  "studioVersion": "19.4.2.0",
+  "projectVersion": "1.0.0",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "isPausable": true,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ]
+  },
+  "projectType": "Workflow",
+  "libraryOptions": {
+    "includeOriginalXaml": false,
+    "privateWorkflows": []
+  },
+  "webServices": []
+}

@@ -1,0 +1,93 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="DigitizeWithoutAbby" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="398,721.333333333333" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:udcd="clr-namespace:UiPath.DocumentProcessing.Contracts.Dom;assembly=UiPath.DocumentProcessing.Contracts" xmlns:udcr="clr-namespace:UiPath.DocumentProcessing.Contracts.Results;assembly=UiPath.DocumentProcessing.Contracts" xmlns:udct="clr-namespace:UiPath.DocumentProcessing.Contracts.Taxonomy;assembly=UiPath.DocumentProcessing.Contracts" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uiad="clr-namespace:UiPath.IntelligentOCR.Activities.Digitization;assembly=UiPath.IntelligentOCR.Activities" xmlns:uiav="clr-namespace:UiPath.IntelligentOCR.Activities.ValidationStation;assembly=UiPath.IntelligentOCR.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.Activities.Contracts</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Taxonomy</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Activities.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentProcessing.Contracts</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="DigitizeWithoutAbby" sap:VirtualizedContainerService.HintSize="358,641.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="Design" sap:VirtualizedContainerService.HintSize="336,517.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="Text" />
+        <Variable x:TypeArguments="udcd:Document" Name="DOM" />
+        <Variable x:TypeArguments="udct:DocumentTaxonomy" Name="Data" />
+        <Variable x:TypeArguments="x:String" Name="TaxonomyJSON" />
+        <Variable x:TypeArguments="udcr:ExtractionResult" Name="HumanValidated" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:ReadTextFile Content="[TaxonomyJSON]" DisplayName="Read Text File" FileName="taxonomy.json" sap:VirtualizedContainerService.HintSize="314,58.6666666666667" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+      <Assign sap:VirtualizedContainerService.HintSize="314,62" sap2010:WorkflowViewState.IdRef="Assign_1">
+        <Assign.To>
+          <OutArgument x:TypeArguments="udct:DocumentTaxonomy">[Data]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="udct:DocumentTaxonomy">[DocumentTaxonomy.Deserialize(TaxonomyJSON)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <uiad:DigitizeDocument DegreeOfParallelism="1" DisplayName="Digitize Document" DocumentObjectModel="[DOM]" DocumentPath="More Examples\Invoice02.tif" DocumentText="[Text]" sap:VirtualizedContainerService.HintSize="314,130.666666666667" sap2010:WorkflowViewState.IdRef="DigitizeDocument_1">
+        <uiad:DigitizeDocument.OCREngine>
+          <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))">
+            <ActivityFunc.Argument>
+              <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+            </ActivityFunc.Argument>
+            <ui:GoogleOCR FilterRegion="{x:Null}" Output="{x:Null}" Text="{x:Null}" AllowedCharacters="" ComputeSkewAngle="False" DeniedCharacters="" DisplayName="Google OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GoogleOCR_1" Image="[Image]" Invert="False" Language="eng" Profile="Legacy" Scale="2" />
+          </ActivityFunc>
+        </uiad:DigitizeDocument.OCREngine>
+      </uiad:DigitizeDocument>
+      <uiav:PresentValidationStation AutomaticExtractionResults="{x:Null}" DisplayName="Present Validation Station" DocumentObjectModel="[DOM]" DocumentPath="More Examples\Invoice02.tif" DocumentText="[Text]" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="PresentValidationStation_1" Taxonomy="[Data]" ValidatedExtractionResults="[HumanValidated]" />
+    </Sequence>
+  </Sequence>
+</Activity>
